@@ -1,0 +1,5 @@
+gunicorn==19.5.0
+pyTelegramBotAPI==2.0.4
+requests==2.10.0
+six==1.10.0
+virtualenv==15.0.1
