@@ -1,1 +1,2 @@
-worker: gunicorn main_app:app --log-file -
+web: gunicorn main_app:app --log-file -
+worker: gunicorn main:bot
