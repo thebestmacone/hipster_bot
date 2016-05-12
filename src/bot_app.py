@@ -8,6 +8,6 @@ bot = telebot.TeleBot(config.TOKEN)
 def start(message):
 	bot.send_message(message.chat.id, "Hello, Bro")
 
-if __name__ == "__main__":
-	bot.polling()
+# if __name__ == "__main__":
+# 	bot.polling()
 	
