@@ -1,1 +1,1 @@
-web: gunicorn main_app:app --log-file -
+web: gunicorn webhook_flask_echo_bot:app --log-file -
