@@ -50,6 +50,12 @@ def getMessage():
     bot.process_new_messages([telebot.types.Update.de_json(request.stream.read().decode("utf-8")).message]) 
     return "!", 200
 
+@app.route("/start", methods=['POST']) 
+def sendMessage():
+    bot.reply_to(message,
+                 ("Hi there, I am EchoBot.\n"
+                  "I am here to echo your kind words back to you."))
+
 # Process webhook calls
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
 def webhook():
