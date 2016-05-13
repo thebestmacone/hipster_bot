@@ -9,4 +9,4 @@ def hello():
 
 if __name__ == "__main__":
 	app.run()
-	bot.polling()
+	bot_app.bot.polling()
