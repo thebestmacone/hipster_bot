@@ -7,19 +7,19 @@ bot = telebot.TeleBot(config.botToken)
 app = Flask(__name__) 
 
 @bot.message_handler(commands=['start']) 
-def start(message): 
-bot.send_message(message.chat.id, 'Hello') 
+def start(message):
+    bot.send_message(message.chat.id, 'Hello') 
 
 @app.route("/bot", methods=['POST']) 
 def getMessage(): 
-bot.process_new_messages([telebot.types.Update.de_json(request.stream.read().decode("utf-8")).message]) 
-return "!", 200 
+    bot.process_new_messages([telebot.types.Update.de_json(request.stream.read().decode("utf-8")).message]) 
+    return "!", 200 
 
 @app.route("/") 
 def webhook(): 
-bot.remove_webhook() 
-bot.set_webhook(url="https://hipstertestbot.herokuapp.com/bot") 
-return "!", 200 
+    bot.remove_webhook() 
+    bot.set_webhook(url="https://hipstertestbot.herokuapp.com/bot") 
+    return "!", 200 
 
 port = int(os.environ.get("PORT", 5000)) 
 app.run(host='0.0.0.0', port=port) 
