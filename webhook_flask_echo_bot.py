@@ -3,7 +3,7 @@ import config
 import os 
 from flask import Flask, request 
 
-bot = telebot.TeleBot(config.botToken) 
+bot = telebot.TeleBot(config.TOKEN) 
 app = Flask(__name__) 
 
 @bot.message_handler(commands=['start']) 
@@ -21,5 +21,5 @@ def webhook():
     bot.set_webhook(url="https://hipstertestbot.herokuapp.com/bot") 
     return "!", 200 
 
-port = int(os.environ.get("PORT", 5000)) 
+port = int(os.environ.get("PORT", 443)) 
 app.run(host='0.0.0.0', port=port) 
