@@ -87,6 +87,7 @@ def echo_message(message):
 if __name__ == "__main__":
     app.run(host=WEBHOOK_LISTEN,
         port=WEBHOOK_PORT)
+    bot.polling()
 # ,
 #         ssl_context=(WEBHOOK_SSL_CERT, WEBHOOK_SSL_PRIV),
 #         debug=True)
