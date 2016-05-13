@@ -41,8 +41,14 @@ app = flask.Flask(__name__)
 # Empty webserver index, return nothing, just http 200
 @app.route('/', methods=['GET', 'HEAD'])
 def index():
-    return ''
+    bot.remove_webhook() 
+    bot.set_webhook(url="https://hipstertestbot.herokuapp.com/bot") 
+    return "!", 200
 
+@app.route("/bot", methods=['POST']) 
+def getMessage():
+    bot.process_new_messages([telebot.types.Update.de_json(request.stream.read().decode("utf-8")).message]) 
+    return "!", 200
 
 # Process webhook calls
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
