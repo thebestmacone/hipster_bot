@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @bot.message_handler(commands=['start']) 
 def start(message): 
-bot.send_message(message.chat.id, 'Привет') 
+bot.send_message(message.chat.id, 'Hello') 
 
 @app.route("/bot", methods=['POST']) 
 def getMessage(): 
